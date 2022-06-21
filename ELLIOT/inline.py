@@ -22,6 +22,8 @@ def stream_markup(user_id):
     [
       InlineKeyboardButton(text="✨ جروب الدعم", url=f"https://t.me/{GROUP_SUPPORT}"),
       InlineKeyboardButton(text="📣 قناة السورس", url=f"https://t.me/{UPDATES_CHANNEL}"),
+      InlineKeyboardButton(text=" سورس ايــثــون الصوتي", url=f"https://t.me/EITHMU1
+      InlineKeyboardButton(text=" سورس ايــثــون يوزر بوت" ,url=f"https://t.me/EITHON1
     ],
   ]
   return buttons

