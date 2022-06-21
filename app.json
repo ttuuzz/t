@@ -1,8 +1,8 @@
 {
-    "name": "ELLIOT",
+    "name": "سورس ايــثــون الصوتي ",
     "description": "تسمح لك بتشغيل الموسيقي والفيديو في ل=الدردشات الصوتيه.",
     "keywords": ["ELLIOT", "ELLIOT-MUSIC", "موسيقي", "محادثات صوتيه", "تلجرام", "يوكي", "يوكي ميوزك", "موسيقي خاصه"],
-    "repository": "https://github.com/ZVMUSIC/ELLLIOT-MUSIC",
+    "repository": "https://github.com/byffyyffu/te",
   "stack": "container",
     "env": {
         "SESSION_NAME": {
@@ -28,12 +28,12 @@
         "BOT_USERNAME": {
             "description": "ضع معرف بوتك",
             "required": true,
-            "value": "ELLIOT2_Robot"
+            "value": ""
         },
         "API_ID": {
             "description": "ضع ايبي ايدي",
             "required": true,
-            "value": "6435225"
+            "value": ""
         },
         "MONGO_DB_URL": {
             "description": "لا تغيرها ابدا",
@@ -43,7 +43,7 @@
         "API_HASH": {
             "description": "ضع ايبي هاش",
             "required": false,
-            "value": "4e984ea35f854762dcde906dce426c2d"
+            "value": ""
         },
         "HEROKU_MODE": {
             "description": "لا تغيرها ابدا ابدا هيا لمنع حظر هيروكو",
@@ -53,7 +53,7 @@
         "GROUP_SUPPORT": {
             "description": "ضع يوزر جروبك",
             "required": false,
-            "value": "V_O_T_L"
+            "value": ""
         },
         "UPDATES_CHANNEL": {
             "description": "ضع قناة التحديث",
