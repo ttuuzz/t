@@ -17,7 +17,7 @@ from ELLIOT.Database.active import (
 
 
 
-@app.on_message(filters.command("activevoice") & filters.user(SUDO_USERS))
+@app.on_message(filters.command("تفعيل الصوتية") & filters.user(SUDO_USERS))
 async def activevc(_, message: Message):
     mystic = await message.reply_text(
         "جارٍ تفعيل الدردشات الصوتية .. يُرجى الانتظار"
@@ -29,7 +29,7 @@ async def activevc(_, message: Message):
         try:
             title = (await app.get_chat(x)).title
         except Exception:
-            title = "جروب خاص"
+            title = "كروب خاص"
         if (await app.get_chat(x)).username:
             user = (await app.get_chat(x)).username
             text += f"<b>{j + 1}.</b>  [{title}](https://t.me/{user})[`{x}`]\n"
@@ -57,7 +57,7 @@ async def activevi_(_, message: Message):
         try:
             title = (await app.get_chat(x)).title
         except Exception:
-            title = "جروب خاص"
+            title = "كروب خاص"
         if (await app.get_chat(x)).username:
             user = (await app.get_chat(x)).username
             text += f"<b>{j + 1}.</b>  [{title}](https://t.me/{user})[`{x}`]\n"

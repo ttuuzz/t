@@ -25,7 +25,7 @@ from ELLIOT.Database.active import *
 from ELLIOT.Database.clientdb import *
 from ELLIOT.Client.Joiner import *
 from youtubesearchpython import VideosSearch
-IMAGE_THUMBNAIL = "https://telegra.ph/file/adcf833bd6314e0cf31fd.png"
+IMAGE_THUMBNAIL = "https://telegra.ph/file/41b77331976a3a8eec93f.jpg"
 
 
 def ytsearch(query: str):
@@ -58,7 +58,7 @@ async def ytdl(link):
     else:
         return 0, stderr.decode()
 
-@Client.on_message(command(["vplay", f"vplay@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(command(["فيديو", f"vplay@{BOT_USERNAME}"]) & other_filters)
 @AssistantAdd
 async def vplay(c: Client, m: Message):
     if HEROKU_MODE == "ENABLE":

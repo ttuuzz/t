@@ -10,7 +10,7 @@ from ELLIOT.Client.assistant import get_assistant_details, random_assistant
 from ELLIOT.Database.active import get_active_chats
 
 
-@app.on_message(filters.command("joinassistant", "userbotjoin"))
+@app.on_message(filters.command("انضم", "userbotjoin"))
 @authorized_users_only
 async def basffy(_, message):
     if len(message.command) != 2:
@@ -23,7 +23,7 @@ async def basffy(_, message):
         chat_id = (await app.get_chat(chat)).id
     except:
         return await message.reply_text(
-            "Add Bot to this Chat First.. Unknown Chat for the bot"
+            "اضف البوت الى المحادثه باستثناء صلاحيات التخفي"
         )
     _assistant = await get_assistant(chat_id, "assistant")
     if not _assistant:
@@ -43,7 +43,7 @@ async def basffy(_, message):
     await message.reply_text("Joined.")
 
 
-@app.on_message(filters.command("leavebot") & filters.user(SUDO_USERS))
+@app.on_message(filters.command("بوت غادر") & filters.user(SUDO_USERS))
 async def baaaf(_, message):
     if len(message.command) != 2:
         await message.reply_text(
@@ -60,7 +60,7 @@ async def baaaf(_, message):
     await message.reply_text("Bot has left the chat successfully")
 
 
-@app.on_message(filters.command("leaveassistant") & filters.user(SUDO_USERS))
+@app.on_message(filters.command("غادر") & filters.user(SUDO_USERS))
 async def baujaf(_, message):
     if len(message.command) != 2:
         await message.reply_text(
@@ -92,7 +92,7 @@ async def baujaf(_, message):
     await message.reply_text("Left.")
 
 
-@Client.on_message(command(["leaveall", f"leaveall@{BOT_USERNAME}"]))
+@Client.on_message(command(["غادر الجميع", f"leaveall@{BOT_USERNAME}"]))
 @sudo_users_only
 async def leave_all(client, message):
     if message.from_user.id not in SUDO_USERS:

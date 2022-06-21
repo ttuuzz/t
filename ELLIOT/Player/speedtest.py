@@ -9,16 +9,16 @@ from pyrogram import filters, Client
 from ELLIOT.main import bot as app
 from config import SUDO_USERS as SUDOERS
 
-@app.on_message(filters.command("speedtest") & ~filters.edited)
+@app.on_message(filters.command("فحص") & ~filters.edited)
 async def run_speedtest(_, message):
     userid = message.from_user.id
     m = await message.reply_text("__Processing__...")
     try:
         test = speedtest.Speedtest()
         test.get_best_server()
-        m = await m.edit("⚡️ __running download speedtest__")
+        m = await m.edit("⚡️ __جاري فحص سرعه التحميل__")
         test.download()
-        m = await m.edit("⚡️ __running upload speedtest__")
+        m = await m.edit("⚡️ __جاري فحص سرعه الرفع__")
         test.upload()
         test.results.share()
     except speedtest.ShareResultsConnectFailure:
@@ -27,7 +27,7 @@ async def run_speedtest(_, message):
         await m.edit_text(e)
         return
     result = test.results.dict()
-    m = await m.edit_text("🔄 sharing speedtest results")
+    m = await m.edit_text("🔄 التحضير للمعلومات")
     if result["share"]:
         path = wget.download(result["share"])
         try:
@@ -36,21 +36,21 @@ async def run_speedtest(_, message):
             c.save(path)
         except BaseException:
             pass
-    output = f"""💡 **نتائج SpeedTest**
+    output = f"""💡 **نتائج الفحص**
     
 <u>**Client:**</u>
 
 **ISP:** {result['client']['isp']}
 **الدوله:** {result['client']['country']}
   
-<u>**Server:**</u>
+<u>**السيرفر:**</u>
 
-**Name:** {result['server']['name']}
+**الاسم:** {result['server']['name']}
 **الدوله:** {result['server']['country']}, {result['server']['cc']}
 **كفيل:** {result['server']['sponsor']}
 **وقت الإستجابة:** {result['server']['latency']}  
 
-⚡ **البنح:** {result['ping']}"""
+⚡ **البنك:** {result['ping']}"""
     if result["share"]:
         msg = await app.send_photo(
             chat_id=message.chat.id, photo=path, caption=output

@@ -21,9 +21,9 @@ from ELLIOT.main import random_assistant
 ass_num_list = ["1", "2", "3", "4", "5"]
 
 
-@app.on_message(filters.command("changeassistant") & filters.user(SUDOERS))
+@app.on_message(filters.command("تغيير المساعد") & filters.user(SUDOERS))
 async def assis_change(_, message: Message):
-    usage = f"**الاستخدام: **/changeassistant [ASS_NO]  اختر منهم\n{' | '.join(ass_num_list)}"
+    usage = f"**الاستخدام: **/تغيير المساعد [ASS_NO]  اختر منهم\n{' | '.join(ass_num_list)}"
     if len(message.command) != 2:
         return await message.reply_text(usage)
     num = message.text.split(None, 1)[1].strip()

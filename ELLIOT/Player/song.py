@@ -35,12 +35,12 @@ ydl_opts = {
     'quite': True
 }
 
-@Client.on_message(command(["song", f"song@{bn}"]) & ~filters.edited)
+@Client.on_message(command(["تحميل", f"song@{bn}"]) & ~filters.edited)
 async def song(_, message):
     if HEROKU_MODE == "ENABLE":
         return
     query = " ".join(message.command[1:])
-    m = message.reply("🔎 finding song...")
+    m = message.reply("🔎 العثور على الموسيقى...")
     ydl_ops = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -222,7 +222,7 @@ def time_to_seconds(times):
                 stringt.split(":"))))
 
 @Client.on_message(
-    command(["vsong", f"vsong@{bn}", "video", f"video@{bn}"]) & ~filters.edited
+    command(["تحميل_ف", f"vsong@{bn}", "video", f"video@{bn}"]) & ~filters.edited
 )
 async def vsong(client, message):
     if HEROKU_MODE == "ENABLE":
@@ -252,7 +252,7 @@ async def vsong(client, message):
     except Exception as e:
         print(e)
     try:
-        msg = await message.reply("📥 **downloading video...**")
+        msg = await message.reply("📥 **جاري تحميل الفيديو...**")
         with YoutubeDL(ydl_opts) as ytdl:
             ytdl_data = ytdl.extract_info(link, download=True)
             file_name = ytdl.prepare_filename(ytdl_data)
@@ -274,14 +274,14 @@ async def vsong(client, message):
 
 
 
-@Client.on_message(command(["lyric", f"lyric@{bn}"]))
+@Client.on_message(command(["كلمات", f"lyric@{bn}"]))
 async def lyrics(_, message):
     try:
         if len(message.command) < 2:
             await message.reply_text("» **give a lyric name too.**")
             return
         query = message.text.split(None, 1)[1]
-        rep = await message.reply_text("🔎 **searching lyrics...**")
+        rep = await message.reply_text("🔎 **جاري البحث عن كلمات...**")
         resp = requests.get(
             f"https://api-tede.herokuapp.com/api/lirik?l={query}"
         ).json()

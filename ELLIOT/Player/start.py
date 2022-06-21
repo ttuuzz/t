@@ -8,7 +8,7 @@ from config import START_PIC, UPDATES_CHANNEL, GROUP_SUPPORT
 
 
 ALIVE_PIC = START_PIC
-HOME_TEXT = "👋🏻 **مرحبا [{}](tg://user?id={})** \n\n🤖 انا **توباك**. \n**استطيع تشغيل الموسيقي, والراديو, Vc Raid, وفديوهات اليوتيوب & وايضا تشغيل فديوهات التلجرام والصوت **"
+HOME_TEXT = "👋🏻 **مرحبا [{}](tg://user?id={})** \n\n🤖 انا **اسمي ايــثــون الصوتي**. \n**استطيع تشغيل الموسيقي, والراديو, Vc Raid, وفديوهات اليوتيوب & وايضا تشغيل فديوهات التلجرام والصوت **"
 HELP_TEXT = """
 🏷️ **دليل الإعداد** :
 
@@ -22,13 +22,13 @@ HELP_TEXT = """
 USER_TEXT = """
 🏷️ **اوامر الاعضاء** :
 
-\u2022 /play <Query> اسم الاغنيه او رابط.
-\u2022 /vplay <Query> عنوان او رابط فيديو.
-\u2022 /stream <Live Url> لتشغيل فيديو في البث 👇\n /song تحميل اغنيه من اليوتيوب. \n /video تحميل فيديو من اليوتيوب\n /lyric بحث عن كلمات اغنيه.
+\u2022 /تشغيل <Query> اسم الاغنيه او رابط.
+\u2022 /فيديو <Query> عنوان او رابط فيديو.
+\u2022 /مباشر <Live Url> لتشغيل فيديو في البث 👇\n /تحميل تحميل اغنيه من اليوتيوب. \n /تحميل_ف تحميل فيديو من اليوتيوب\n /كلمات بحث عن كلمات اغنيه.
 """
 
 SPAM_TEXT = """
-🏷️ **مساعده  @Confgat_EG** :
+🏷️ **مساعده  @EITHON1** :
 
 \u2022 /spam <Count> ضع رسالة االاسبام.
 \u2022 /fspam <Count> رسالة الاسبام.
@@ -36,7 +36,7 @@ SPAM_TEXT = """
 """
 
 RAID_TEXT = """
-🏷️ **اوامر الراديو @Confgat_EG** :
+🏷️ **اوامر الراديو @EITHON1** :
 
 \u2022 /vcraid <chatid> - اعطاء سوزر الدردشه.
 \u2022 /vraid <chatid + Reply To Video File> - راديو فيديو.
@@ -48,12 +48,12 @@ RAID_TEXT = """
 ADMIN = """
 🏷️ **اوامر الادمن** :
 
-\u2022 /userbotjoin دعوة الحساب المساعد للدردشه.
-\u2022 /end To انهاء التشغيل.
-\u2022 /pause ايقاف مؤقت.
-\u2022 /resume استئناف التشغيل.
-\u2022 /volume ضبط الصوت.
-\u2022 /skip تخطي المسار الحالي.
+\u2022 /انضم دعوة الحساب المساعد للدردشه.
+\u2022 /انهاء انهاء التشغيل.
+\u2022 /توقف ايقاف مؤقت.
+\u2022 /استئناف استئناف التشغيل.
+\u2022 /صوت ضبط الصوت.
+\u2022 /تخطي تخطي المسار الحالي.
 """
 
 @Client.on_callback_query()
@@ -61,7 +61,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     if query.data=="help":
         buttons = [
             [
-                InlineKeyboardButton("👮 الادمن", url="https://telegra.ph/ELLIO-TELE--VOTLZ-06-20"),
+                InlineKeyboardButton("👮 الاوامر", url="https://telegra.ph/%D8%B3%D9%88%D8%B1%D8%B3-%D8%A7%D9%8A%D8%AB%D9%88%D9%86-%D8%A7%D9%84%D8%B5%D9%88%D8%AA%D9%8A-EITHON1-06-21"),
                 InlineKeyboardButton("🗨️ الاعضاء", callback_data="users"),
             ],
             [
@@ -69,7 +69,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton("🗨️ سبام", callback_data="spam"),
             ],
             [
-                InlineKeyboardButton("🤖 مصنع بوتات", url="t.me/AS_GBOT"),
+                InlineKeyboardButton("🤖 مصنع بوتات", url="t.me/ML_EIBOT"),
             ],
             [
                 InlineKeyboardButton("🔙 رجوع", callback_data="home"),
@@ -94,9 +94,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],
             [
                 InlineKeyboardButton("💌 جروب الدعم", url=f"https://t.me/{GROUP_SUPPORT}"),
-                InlineKeyboardButton("🏷️ قناة السورس", url=f"https://t.me/{UPDATES_CHANNEL}"),
+                InlineKeyboardButton("🏷️ قناة البوت", url=f"https://t.me/{UPDATES_CHANNEL}"),
             ],
             [
+                InlineKeyboardButton("سورس ايــثــون الصوتي", url=f"https://t.me/EITHMU1"),
+                InlineKeyboardButton("سورس ايــثــون يوزربوت", url=f"https://t.me/EITHON1"),
                 InlineKeyboardButton("🤖 تو باك", url="https://t.me/Confgat_EG"),
             ],
             [
@@ -187,13 +189,15 @@ async def start(client: Client, message: Message):
     USERNAME = get_me.username
     buttons = [
             [
-                InlineKeyboardButton("🧐 اضفني الي مجموعتك", url=f'https://t.me/{USERNAME}?startgroup=true'),
+                InlineKeyboardButton("🤩 اضفني الى مجموعتك ولتبدأ الحفله", url=f'https://t.me/{USERNAME}?startgroup=true'),
             ],
             [
                 InlineKeyboardButton("💌 جروب الدعم", url=f"https://t.me/{GROUP_SUPPORT}"),
-                InlineKeyboardButton("🏷️ قناة السورس", url=f"https://t.me/{UPDATES_CHANNEL}"),
+                InlineKeyboardButton("🏷️ قناة البوت", url=f"https://t.me/{UPDATES_CHANNEL}"),
             ],
             [
+                InlineKeyboardButton("سورس ايــثــون الصوتي", url=f"https://t.me/EITHMU1"),
+                InlineKeyboardButton("سورس ايــثــون يوزربوت", url=f"https://t.me/EITHON1"),
                 InlineKeyboardButton("🤖 تو باك", url="https://t.me/Confgat_EG"),
             ],
             [
@@ -209,7 +213,7 @@ async def help(client: Client, message: Message):
     self.username = get_me.username
     buttons = [
             [
-                InlineKeyboardButton("👮 الادمن", url="https://telegra.ph/ELLIO-TELE--VOTLZ-06-20"),
+                InlineKeyboardButton("👮 الاوامر", url="https://telegra.ph/%D8%B3%D9%88%D8%B1%D8%B3-%D8%A7%D9%8A%D8%AB%D9%88%D9%86-%D8%A7%D9%84%D8%B5%D9%88%D8%AA%D9%8A-EITHON1-06-21"),
                 InlineKeyboardButton("🗨️ الاعضاء", callback_data="users"),
             ],
             [
@@ -217,7 +221,7 @@ async def help(client: Client, message: Message):
                 InlineKeyboardButton("🗨️ اسبام", callback_data="spam"),
             ],
             [
-                InlineKeyboardButton("🤖 مصنع حمايه", url="t.me/AS_GBOT"),
+                InlineKeyboardButton("🤖 مصنع حمايه", url="t.me/ML_EIBOT"),
             ],
             [
                 InlineKeyboardButton("🔙 رجوع", callback_data="home"),
