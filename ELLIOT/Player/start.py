@@ -8,7 +8,7 @@ from config import START_PIC, UPDATES_CHANNEL, GROUP_SUPPORT
 
 
 ALIVE_PIC = START_PIC
-HOME_TEXT = "👋🏻 **مرحبا [{}](tg://user?id={})** \n\n🤖 انا **اسمي ايــثــون**. \n**استطيع تشغيل الموسيقي, والراديو, Vc Raid, وفديوهات اليوتيوب & وايضا تشغيل فديوهات التلجرام والصوت **"
+HOME_TEXT = "👋🏻 **مرحبا [{}](tg://user?id={})** \n\n🤖 انا **ايــثــون**. \n**استطيع تشغيل الموسيقي, والراديو, Vc Raid, وفديوهات اليوتيوب & وايضا تشغيل فديوهات التلجرام والصوت **"
 HELP_TEXT = """
 🏷️ **دليل الإعداد** :
 
@@ -23,8 +23,8 @@ USER_TEXT = """
 🏷️ **اوامر الاعضاء** :
 
 \u2022 /تشغيل <Query> اسم الاغنيه او رابط.
-\u2022 /فيديو <Query> عنوان او رابط فيديو.
-\u2022 /مباشر <Live Url> لتشغيل فيديو في البث 👇\n /تحميل تحميل اغنيه من اليوتيوب. \n /تحميل_ف تحميل فيديو من اليوتيوب\n /كلمات بحث عن كلمات اغنيه.
+\u2022 /فيدديو <Query> عنوان او رابط فيديو.
+\u2022 /مباشر <Live Url> لتشغيل فيديو في البث 👇\n /تحميل تحميل اغنيه من اليوتيوب. \n /تحمييل_ف تحميل فيديو من اليوتيوب\n /كلمات بحث عن كلمات اغنيه.
 """
 
 SPAM_TEXT = """
@@ -36,7 +36,7 @@ SPAM_TEXT = """
 """
 
 RAID_TEXT = """
-🏷️ **اوامر الراديو @EITHON1** :
+🏷️ **اوامر الراديو @Confgat_EG** :
 
 \u2022 /vcraid <chatid> - اعطاء سوزر الدردشه.
 \u2022 /vraid <chatid + Reply To Video File> - راديو فيديو.
@@ -97,7 +97,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton("🏷️ قناة السورس", url=f"https://t.me/{UPDATES_CHANNEL}"),
             ],
             [
-                InlineKeyboardButton("🤖ايــثــون, url="https://t.me/EITHON1"),
+                InlineKeyboardButton("🤖 ايــثــون", url="https://t.me/EITHON1"),
             ],
             [
                 InlineKeyboardButton("🤔 المساعده & الاوامر", callback_data="help"),
@@ -187,14 +187,14 @@ async def start(client: Client, message: Message):
     USERNAME = get_me.username
     buttons = [
             [
-                InlineKeyboardButton("🧐 اضفني الى مجموعتك لتبدأ الحفله 🤩", url=f'https://t.me/{USERNAME}?startgroup=true'),
+                InlineKeyboardButton("🧐 Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Cʜᴀᴛ", url=f'https://t.me/{USERNAME}?startgroup=true'),
             ],
             [
                 InlineKeyboardButton("💌 جروب الدعم", url=f"https://t.me/{GROUP_SUPPORT}"),
                 InlineKeyboardButton("🏷️ قناة السورس", url=f"https://t.me/{UPDATES_CHANNEL}"),
             ],
             [
-                InlineKeyboardButton("🤖 ايــثــون", url="https://t.me/EIITHON1"),
+                InlineKeyboardButton("🤖 ايــثــون", url="https://t.me/EITHON1"),
             ],
             [
                 InlineKeyboardButton("🤔 المساعده & الاوامر", callback_data="help"),
