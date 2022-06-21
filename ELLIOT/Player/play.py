@@ -136,7 +136,7 @@ async def generate_cover(thumbnail, title, userid, ctitle):
 
 
     
-@Client.on_message(command(["تشغيل","play","شغل",f"play@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(command(["تشغيل","play","شغل", f"play@{BOT_USERNAME}"]) & other_filters)
 @AssistantAdd
 async def play(c: Client, m: Message):
     await m.delete()
