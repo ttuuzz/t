@@ -8,7 +8,7 @@ from config import START_PIC, UPDATES_CHANNEL, GROUP_SUPPORT
 
 
 ALIVE_PIC = START_PIC
-HOME_TEXT = "👋🏻 **مرحبا [{}](tg://user?id={})** \n\n🤖 انا **اسمي ايــثــون الصوتي**. \n**استطيع تشغيل الموسيقي, والراديو, Vc Raid, وفديوهات اليوتيوب & وايضا تشغيل فديوهات التلجرام والصوت **"
+HOME_TEXT = "👋🏻 **مرحبا [{}](tg://user?id={})** \n\n🤖 انا **اسمي ايــثــون**. \n**استطيع تشغيل الموسيقي, والراديو, Vc Raid, وفديوهات اليوتيوب & وايضا تشغيل فديوهات التلجرام والصوت **"
 HELP_TEXT = """
 🏷️ **دليل الإعداد** :
 
@@ -94,12 +94,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],
             [
                 InlineKeyboardButton("💌 جروب الدعم", url=f"https://t.me/{GROUP_SUPPORT}"),
-                InlineKeyboardButton("🏷️ قناة البوت", url=f"https://t.me/{UPDATES_CHANNEL}"),
+                InlineKeyboardButton("🏷️ قناة السورس", url=f"https://t.me/{UPDATES_CHANNEL}"),
             ],
             [
-                InlineKeyboardButton("سورس ايــثــون الصوتي", url=f"https://t.me/EITHMU1"),
-                InlineKeyboardButton("سورس ايــثــون يوزربوت", url=f"https://t.me/EITHON1"),
-                InlineKeyboardButton("🤖 تو باك", url="https://t.me/Confgat_EG"),
+                InlineKeyboardButton("🤖ايــثــون, url="https://t.me/EITHON1"),
             ],
             [
                 InlineKeyboardButton("🤔 المساعده & الاوامر", callback_data="help"),
@@ -189,16 +187,14 @@ async def start(client: Client, message: Message):
     USERNAME = get_me.username
     buttons = [
             [
-                InlineKeyboardButton("🤩 اضفني الى مجموعتك ولتبدأ الحفله", url=f'https://t.me/{USERNAME}?startgroup=true'),
+                InlineKeyboardButton("🧐 اضفني الى مجموعتك لتبدأ الحفله 🤩", url=f'https://t.me/{USERNAME}?startgroup=true'),
             ],
             [
                 InlineKeyboardButton("💌 جروب الدعم", url=f"https://t.me/{GROUP_SUPPORT}"),
-                InlineKeyboardButton("🏷️ قناة البوت", url=f"https://t.me/{UPDATES_CHANNEL}"),
+                InlineKeyboardButton("🏷️ قناة السورس", url=f"https://t.me/{UPDATES_CHANNEL}"),
             ],
             [
-                InlineKeyboardButton("سورس ايــثــون الصوتي", url=f"https://t.me/EITHMU1"),
-                InlineKeyboardButton("سورس ايــثــون يوزربوت", url=f"https://t.me/EITHON1"),
-                InlineKeyboardButton("🤖 تو باك", url="https://t.me/Confgat_EG"),
+                InlineKeyboardButton("🤖 ايــثــون", url="https://t.me/EIITHON1"),
             ],
             [
                 InlineKeyboardButton("🤔 المساعده & الاوامر", callback_data="help"),
