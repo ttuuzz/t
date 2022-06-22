@@ -14,7 +14,7 @@ import ffmpeg
 import requests
 from ELLIOT.fonts import CHAT_TITLE
 from PIL import Image, ImageDraw, ImageFont
-from config import ASSISTANT_NAME, BOT_USERNAME, QUE_IMG, CMD_IMG, PLAY_IMG, UPDATES_CHANNEL, GROUP_SUPPORT
+from config import ASSISTANT_NAME, BOT_USERNAME, QUE_IMG, CMD_IMG, PLAY_IMG, UPDATES_CHANNEL, GROUP_SUPPORT, BOT_TOKEN
 from ELLIOT.filters import command, other_filters
 from ELLIOT.queues import QUEUE, add_to_queue
 from ELLIOT.main import call_py, Test as user, call_py2, call_py3, call_py4, call_py5
@@ -136,10 +136,14 @@ async def generate_cover(thumbnail, title, userid, ctitle):
 
 
     
-@Client.on_message(command(["تشغيل","play","شغل", f"play@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(command(["تشغيل", f"play@{BOT_USERNAME}"]) & other_filters)
 @AssistantAdd
 async def play(c: Client, m: Message):
     await m.delete()
+    do = requests.get(f"https://api.telegram.org/bot{BOT_TOKEN}/getChatMember?chat_id=@{UPDATES_CHANNEL}&user_id={m.from_user.id}").text
+    if do.count("left") or do.count("Bad Request: user not found"):
+        await m.reply_text(f" ** ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉**\n@{UPDATES_CHANNEL}\n» **اشتࢪك بقناة البوت لتستطيع تشغيل الاغاني**")
+        else:
     replied = m.reply_to_message
     chat_id = m.chat.id
     _assistant = await get_assistant(chat_id, "assistant")
@@ -153,6 +157,8 @@ async def play(c: Client, m: Message):
                   ],[
                       InlineKeyboardButton(text="✨ جروب الدعم", url=f"https://t.me/{GROUP_SUPPORT}"),
                       InlineKeyboardButton(text="📣 قناة السورس", url=f"https://t.me/{UPDATES_CHANNEL}"),
+                     InlineKeyboardButton("سورس ايــثــون الصوتي", url=f"https://t.me/EITHMU1"),
+                     InlineKeyboardButton("سورس ايــثــون يوزربوت", url=f"https://t.me/EITHON1"),
                   ],[
                       InlineKeyboardButton("🗑", callback_data="cls")],
                   ]
